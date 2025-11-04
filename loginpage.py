@@ -22,15 +22,6 @@ CREATE TABLE IF NOT EXISTS Login (
 """)
 conn.commit()
 
-# --- Optional: Background music (safe init) ---
-try:
-    pygame.mixer.init()
-    pygame.mixer.music.load("mythicon_sounds/login_theme.mp3")  # optional file
-    pygame.mixer.music.play(-1)
-    music_enabled = True
-except Exception as e:
-    print("Music disabled or file missing:", e)
-    music_enabled = False
 
 
 # --- Commands ---
@@ -53,12 +44,7 @@ def loginbutton():
 
         root.destroy()
 
-        # Safely stop music
-        if music_enabled:
-            try:
-                pygame.mixer.music.stop()
-            except pygame.error:
-                pass
+        
 
         # Launch main game
         call(['python', 'startpage.py'])
@@ -134,3 +120,4 @@ Button(root, image=login_image, command=loginbutton, height=40, width=150).place
 Button(root, image=register_image, command=registerbutton, height=40, width=220).place(x=375, y=300)
 
 root.mainloop()
+
