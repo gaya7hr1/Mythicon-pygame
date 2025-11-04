@@ -23,7 +23,7 @@ root = Tk()
 root.title("MYTHICON")
 #pygame####
 pygame.mixer.init()# initialise the pygame
-pygame.mixer.music.load(r"E:/New folder/MYTHICON/mythicon_sounds/skycol.wav")
+pygame.mixer.music.load("mythicon_sounds/skycol.wav")
 pygame.mixer.music.play(-1)
 #frame
 frame= Frame(root)
@@ -32,18 +32,18 @@ frame.pack()
 canvas = Canvas(frame, bg="black",width=739,height=415)
 canvas.pack()
 #images
-bg_surface= PhotoImage(file =(r'E:\New folder\MYTHICON\mythicon_images\pink.png'))
-title_image=PhotoImage(file = (r'E:\New folder\MYTHICON\mythicon_images\title.png'))
+bg_surface= PhotoImage(file =("mythicon_images/pink.png"))
+title_image=PhotoImage(file = ("mythicon_images/title.png"))
 
 #open file username
-f=open(r'E:/New folder/MYTHICON/mythicon_others/username.txt','r')
+f=open("mythicon_others/username.txt",'r')
 pp=f.read().strip()
 f.close()
 canvas.create_image(369.5,207.5,image=bg_surface)
 canvas.create_image(369.5,150,image=title_image)
 
 #text
-txt='WELCOME BACK ' + str(pp).upper() +'! we await your grand entrance into the magical realm of '.upper()
+txt='WELCOME BACK ' + str(pp).upper() +'! we await your grand entrance into the magical realm of dragons '.upper()
 canvas.create_text(655,370,fill="white",font=("courier",13),text=('CREDITS :\nJ.GAYATHRI\nA.R KEERTHANA\nP.YESHASWI'))
 canvas.create_text(30,40,fill="white",font=("courier",11),anchor=W,text=(txt))
 #buttons
