@@ -1,4 +1,4 @@
-# MYTHICON- PYGAME inspired by flappy bird
+# Mythicon 
 A mini group project done in python and mysql(now sqlite).
 
 ## Game Lore!
